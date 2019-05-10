@@ -9,6 +9,8 @@ class MarketPlace
       post 'products', to: ProductsController::Create
       get 'products/:id/promotions/new', id: /\d+/, to: PromotionsController::New
       post 'products/:id/promotions', id: /\d+/, to: PromotionsController::Create
+      get 'offers/new', to: OffersController::New
+      post 'offers', to: OffersController::Create
       # get '/', to: ->(env) { [200, {}, ['Hello from Hanami!']] }
     end
   end

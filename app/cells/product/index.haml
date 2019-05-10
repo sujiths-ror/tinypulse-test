@@ -1,13 +1,22 @@
 .container
-  .list-group
-    - @products.each do |product|
-      .list-group-item
-        %a{href: "/products/#{product.id}"}
-          %h4.list-group-item-heading
-            = product.title
-        %p.list-group-item-text
-          = product.description
-        %p.list-group-item-text
-          = product.price
-        %a{href: "/products/#{product.id}/promotions/new"}Add promotion
+  %table.table.mt-3em.products_table
+    %thead
+      %tr
+        %th Title
+        %th Description
+        %th Price
+        %th Actions
+    %tbody
+      - @products.each do |product|
+        %tr
+          %td
+            %a.a1{href: "/products/#{product.id}"}
+              %h4.list-group-item-heading
+                = product.title
+          %td
+            = product.description
+          %td
+            = product.price
+          %td
+            %a.btn.btn-primary{href: "/products/#{product.id}/promotions/new"}+ Add promotion
 

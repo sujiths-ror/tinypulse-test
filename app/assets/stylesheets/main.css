@@ -1,0 +1,59 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+.mt-3em {
+  margin-top: 3em;
+}
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #d0d0d0;
+}
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+  background-color: #f3f3f373;
+  border: 1px solid #ddd;
+}
+.a1 {    text-decoration: none;
+  color: #3c3c3c;
+}
+.list-group-item-text {
+  margin-bottom: 0;
+  line-height: 1.3;
+  color: #929292;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.products_table td{
+  vertical-align: middle !important;
+}
+.product-wrapper {
+  padding: 20px;
+  border: 1px solid #c6c6c6;
+  border-radius: 4px;
+}
+.promotions {
+ background: whitesmoke;
+ padding: 5px;
+}
+.promotions p {    margin-bottom: 3px;
+  font-weight: bold;
+}
+.promotions ul {    padding: 0px;
+  list-style: none;
+  font-size: 12px;
+}
+.promotions li {    font-size: 12px;
+}
+.promotions h3 {    font-size: 13px;
+  margin-top: 2px;
+}

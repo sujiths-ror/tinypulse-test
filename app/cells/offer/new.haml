@@ -1,5 +1,5 @@
 .container
-  %form{action: "/offers", method: 'post'}
+  %form.mt-3em{action: "/offers", method: 'post'}
     .form-group
       %label{:for => "titleInput1"} Title
       %input#titleInput1.form-control{:name => "offer[title]",:placeholder => "50% Off", :type => "text", value: "#{@offer.title}"}

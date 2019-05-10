@@ -1,12 +1,17 @@
 .container
-  %h2
-    TinyPulse MarketPlace
-  %a{href: '/'}
-    Products
-  %a{href: '/products/new'}
-    New Product
-  %a{href: '/offers/new'}
-    New Offer
-  %a{href: '/products'}
-    Products
+  .jumbotron.mt-3em
+    %h1
+      TinyPulse MarketPlace
+      %hr
+    %nav.navbar.navbar-default
+      .container-fluid
+        %ul.nav.navbar-nav
+          %li
+            %a{href: '#'} Home
+          %li
+            %a{href: '/products'} Products
+          %li
+            %a{href: '/products/new'} New Product
+          %li
+            %a{href: '/offers/new'} New Offer
 

@@ -1,10 +1,15 @@
-%h1
-  = @product.title
-%h2
-  = @product.description
-- if @product.promotions.present?
-  %h2 Promotions
-  %ul
-    - @product.promotions.each do |promotion|
-      %li
-        %h3= promotion.title
+.container
+  .product-wrapper.mt-3em
+    %h3
+      = @product.title
+    %h4
+      = @product.description
+    %h4
+      = @product.price
+    - if @product.promotions.present?
+      .promotions
+        %p Promotions
+        %ul
+          - @product.promotions.each do |promotion|
+            %li
+              %h3= promotion.title

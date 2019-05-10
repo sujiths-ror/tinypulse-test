@@ -1,35 +1,76 @@
-%h2 New Promotion
-%form{action: "/products/#{@product.id}/promotions", method: 'post'}
-  Title:
-  %br
-  %input{:name => "promotion[title]", :type => "text", :value => "#{@promotion.title}"}
-  %br
-  Promotion Type:
-  %br
-  %select#promotion_type{:name => "promotion[promotion_type]"}
-    %option{:value => 1} Single
-    %option{:value => 2} Multiple
-  %br
-  %span.single_discount_wrapper
-    Discount Type:
-    %br
-    %select{:name => "promotion[discount_type]"}
-      %option{:value => 1} Percentage
-      %option{:value => 2} Amount
-    %br
-    Discount:
-    %br
-    %input{:name => "promotion[discount]", :type => "number", :step => "0.01", :value => "#{@promotion.discount}"}
-    %br
-  %span.multiple_discount_wrapper.hidden
-    Minimum items:
-    %br
-    %input{:name => "promotion[multiple_min_items]", :type => "number", :step => "1", :value => "#{@promotion.multiple_min_items}"}
-    %br
-    Per item price:
-    %br
-    %input{:name => "promotion[multiple_item_price]", :type => "number", :step => "0.01", :value => "#{@promotion.multiple_item_price}"}
-    %br
-  %input.hidden{:name => "promotion[product_id]", :type => "number", :value => "#{@product.id}"}
-  %br
-  %input{:type => "submit", :value => "Submit"}
+/ %h2 New Promotion
+/ %form{action: "/products/#{@product.id}/promotions", method: 'post'}
+/   Title:
+/   %br
+/   %input{:name => "promotion[title]", :type => "text", :value => "#{@promotion.title}"}
+/   %br
+/   Promotion Type:
+/   %br
+/   %select#promotion_type{:name => "promotion[promotion_type]"}
+/     %option{:value => 1} Single
+/     %option{:value => 2} Multiple
+/   %br
+/   %span.single_discount_wrapper
+/     Discount Type:
+/     %br
+/     %select{:name => "promotion[discount_type]"}
+/       %option{:value => 1} Percentage
+/       %option{:value => 2} Amount
+/     %br
+/     Discount:
+/     %br
+/     %input{:name => "promotion[discount]", :type => "number", :step => "0.01", :value => "#{@promotion.discount}"}
+/     %br
+/   %span.multiple_discount_wrapper.hidden
+/     Minimum items:
+/     %br
+/     %input{:name => "promotion[multiple_min_items]", :type => "number", :step => "1", :value => "#{@promotion.multiple_min_items}"}
+/     %br
+/     Per item price:
+/     %br
+/     %input{:name => "promotion[multiple_item_price]", :type => "number", :step => "0.01", :value => "#{@promotion.multiple_item_price}"}
+/     %br
+/   %input.hidden{:name => "promotion[product_id]", :type => "number", :value => "#{@product.id}"}
+/   %br
+/   %input{:type => "submit", :value => "Submit"}
+
+
+
+
+.container
+  %form{action: "/products/#{@product.id}/promotions", method: 'post'}
+    .form-group
+      %label{:for => "titleInput1"} Title
+      %input#titleInput1.form-control{:name => "promotion[title]",:placeholder => "50% Off", :type => "text", value: "#{@promotion.title}"}
+
+      %label{:for => "promotion_type"} Example select
+      %select#promotion_type.form-control{:name => "promotion[promotion_type]"}
+        %option{value: 1} Single
+        %option{value: 2} Multiple
+
+      .single_discount_wrapper
+        %label{:for => "discounttypeSelect1"} Discount type
+        %select#discounttypeSelect1.form-control{:name => "promotion[discount_type]"}
+          %option{value: 1} Percentage
+          %option{value: 2} Amount
+
+        %label{:for => "discountInput1"} Discount
+        %input#discountInput1.form-control{:name => "promotion[discount]", :type => "number", :step => "0.01", :value => "#{@promotion.discount}"}
+
+      .multiple_discount_wrapper.hidden
+        %label{:for => "limitInput1"} Minimum Items
+        %input#limitInput1.form-control{:name => "promotion[multiple_min_items]", :type => "number", :step => "1", :value => "#{@promotion.multiple_min_items}"}
+
+        %label{:for => "limitInput1"} Per item price
+        %input#limitInput1.form-control{:name => "promotion[multiple_item_price]", :type => "number", :step => "0.01", :value => "#{@promotion.multiple_item_price}"}
+
+      %label{:for => "validfromInput1"} Valid from
+      %input#validfromInput1.form_datetime{:name => "promotion[valid_from]", :size => "16", :type => "datetime-local", :value => "#{Time.now.to_s}"}
+
+      %label{:for => "validtoInput1"} Valid to
+      %input#validtoInput1.form_datetime{:name => "promotion[valid_to]", :size => "16", :type => "datetime-local", :value => "#{Time.now.to_s}"}
+
+      %input.hidden{:name => "promotion[product_id]", :type => "number", :value => "#{@product.id}"}
+
+    %button.btn.btn-primary{:type => "submit"} Submit
+

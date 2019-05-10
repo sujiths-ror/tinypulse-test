@@ -7,6 +7,8 @@ class PromotionCell < Cell::ViewModel
   property :discount_type
   property :multiple_min_items
   property :multiple_item_price
+  property :valid_from
+  property :valid_to
   property :product_id
 
   def index(promotion)

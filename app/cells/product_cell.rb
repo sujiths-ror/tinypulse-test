@@ -5,12 +5,18 @@ class ProductCell < Cell::ViewModel
   property :description
   property :price
 
-  def show
+  def show(product)
+    @product = product
     render
   end
 
-  def index(collection = [])
+  def index(products)
+    @products = products
     render
   end
 
+  def new(product)
+    @product = product
+    render
+  end
 end

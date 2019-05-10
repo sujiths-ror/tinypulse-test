@@ -1,0 +1,16 @@
+%h2 Text Input
+%form{action: '/products', method: 'post'}
+  Title:
+  %br
+  %input{:name => "product[title]", :type => "text", :value => "#{@product.title}"}
+  %br
+  Description:
+  %br
+  %input{:name => "product[description]", :type => "text", :value => "#{@product.description}"}
+  %br
+  Unit Price:
+  %br
+  %input{:name => "product[price]", :type => "number", :step => "0.01", :value => "#{@product.price}"}
+  %br
+  %br
+  %input{:type => "submit", :value => "Submit"}

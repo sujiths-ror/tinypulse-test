@@ -5,7 +5,11 @@ class ProductsController
     include ::Hanami::Action
     def call(params)
       @products = Product.all
-      self.body = ProductCell.new.index(@products)
+      render_layout ProductCell.new.index(@products)
+    end
+
+    def render_layout(content = '')
+      self.body = LayoutCell.new(nil).() { content }
     end
   end
 end

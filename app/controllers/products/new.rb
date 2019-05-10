@@ -1,11 +1,12 @@
 require 'hanami/controller'
 
 class ProductsController
-  class Show
+  class New
     include ::Hanami::Action
     def call(params)
-      @product = Product.includes(:promotions).find_by(id: params[:id])
-      render_layout ProductCell.new.show(@product)
+      @product = Product.new
+      render_layout ProductCell.new.new(@product)
+      # self.body = ProductCell.new.new(@product)
     end
 
     def render_layout(content = '')

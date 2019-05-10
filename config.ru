@@ -5,7 +5,9 @@ require 'cell'
 require 'cell/haml'
 
 require './db/connection.rb'
-require './db/schema.rb'
+# require './db/schema.rb'
+
+use Rack::Static, :urls => ["/app/assets"]
 
 Dir[File.join(File.dirname(__FILE__), 'config', '**', '*.rb')].sort.each {|file| require file }
 Dir[File.join(File.dirname(__FILE__), 'app/models', '**', '*.rb')].sort.each {|file| require file }

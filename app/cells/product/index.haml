@@ -1,2 +1,17 @@
-%h1
-  INDEX
+.container
+  %h2
+    %a{href: '/'}
+      Products
+  %a{href: '/products/new'}
+    New Product
+  .list-group
+    - @products.each do |product|
+      .list-group-item
+        %h4.list-group-item-heading
+          = product.title
+        %p.list-group-item-text
+          = product.description
+        %p.list-group-item-text
+          = product.price
+        %a{href: "/products/#{product.id}/promotions/new"}Add promotion
+

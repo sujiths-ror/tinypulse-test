@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  has_many :promotions
+  has_many :promotions, dependent: :destroy
 
   validates :title, presence: true
   validates :description, presence: true
